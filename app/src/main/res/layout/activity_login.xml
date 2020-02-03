@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="110dp"
             android:layout_marginBottom="30dp"
-            android:text="Signup | Login,"
+            android:text="Signup | Login"
             android:textColor="#000000"
             android:textSize="18sp" />
 
