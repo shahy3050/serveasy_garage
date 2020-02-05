@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,6 +25,7 @@ public class SignupActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email_et, password_et, confirm_et;
     private Button signup_bt;
+    private TextView loginTV;
 
 
     public void bindViews() {
@@ -31,7 +33,7 @@ public class SignupActivity extends AppCompatActivity {
         password_et = findViewById(R.id.password_edittext);
         confirm_et = findViewById(R.id.confirm_edittext);
         signup_bt = findViewById(R.id.signup_button);
-
+        loginTV = findViewById(R.id.login_text_view);
     }
 
 
@@ -149,6 +151,13 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 attemptRegistration();
+            }
+        });
+        loginTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
