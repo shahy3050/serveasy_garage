@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private EditText email_et, password_et;
+    private TextView signupTV;
     private Button login_bt;
 
 
@@ -32,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         email_et = findViewById(R.id.email_edit_text);
         password_et = findViewById(R.id.password_edit_text);
         login_bt = findViewById(R.id.login_button);
+        signupTV = findViewById(R.id.register_text_view);
     }
 
     @Override
@@ -105,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("serveasy", "Failure in Sign In" + task.getException());
 
                     showErrorDialog("Failure Loggin In, Please Try again");
-                    
+
                 }
 
             }
@@ -130,7 +133,21 @@ public class LoginActivity extends AppCompatActivity {
         bindViews();
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        attemptLogin();
+
+        login_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptLogin();
+            }
+        });
+
+        signupTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
