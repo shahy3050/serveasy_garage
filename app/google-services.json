@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1064985686555",
+    "firebase_url": "https://serveasy-garage.firebaseio.com",
+    "project_id": "serveasy-garage",
+    "storage_bucket": "serveasy-garage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064985686555:android:1408d41f0f0ee496cd7ebe",
+        "android_client_info": {
+          "package_name": "com.example.serveasy_garage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064985686555-iak5ds529rnler072p09mdqj76fi0vrh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.serveasy_garage",
+            "certificate_hash": "39a89d16a6342d1d6cf80b54e122593c3d871e12"
+          }
+        },
+        {
+          "client_id": "1064985686555-ikajlepfdbej7nneupo8ip24jr1dui24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAARVkh3XqjeCw1qCXeLSoGJLKbH6KNhCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064985686555-ikajlepfdbej7nneupo8ip24jr1dui24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
