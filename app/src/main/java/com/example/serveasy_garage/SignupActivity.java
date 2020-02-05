@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class SignupActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private EditText email_et, password_et, confirm_et;
+    private EditText email_et, password_et,confirm_et;
 
 
     public void bindviews() {
@@ -42,13 +42,13 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d("Serveasy", "Create User With Email: Success");
+                            Log.d("Serveasy", "Create User With Email is Successful");
                             FirebaseUser user = mAuth.getCurrentUser();
                             Log.d("Serveasy", "User is" + user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.e("Serveasy", "Error:" + task.getException());
-                            Toast.makeText(SignupActivity.this, "Authentication failed.",
+                            Toast.makeText(SignupActivity.this, "Authentication Failure.",
                                     Toast.LENGTH_SHORT).show();
                         }
 
