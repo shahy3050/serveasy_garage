@@ -1,8 +1,10 @@
 package com.example.serveasy_garage;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -40,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         Log.d("serveasy", "User :" + user);
     }
 
-
+    // attempt login when clicked on login button
     public void attemptLogin() {
         email_et.setError(null);
         password_et.setError(null);
@@ -51,12 +53,12 @@ public class LoginActivity extends AppCompatActivity {
         boolean cancel = false;
         View focusView = null;
 
+        // Check for a empty password.
         if (TextUtils.isEmpty(password)) {
             password_et.setError("Password is Empty!!! ");
             focusView = password_et;
             cancel = true;
         }
-
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
             email_et.setError("Email ID is Empty");
@@ -94,13 +96,31 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("serveasy", "Sign in Successful");
                     FirebaseUser user = mAuth.getCurrentUser();
                     Log.d("serveasy", "USER IS: " + user);
+
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    finish();
+                    startActivity(intent);
+
                 } else {
                     Log.d("serveasy", "Failure in Sign In" + task.getException());
-                    Toast.makeText(LoginActivity.this, "Cant Log In", Toast.LENGTH_SHORT).show();
+
+                    showErrorDialog("Failure Loggin In, Please Try again");
+                    
                 }
 
             }
         });
+    }
+
+    private void showErrorDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle("OOPS")
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
+
     }
 
     @Override
