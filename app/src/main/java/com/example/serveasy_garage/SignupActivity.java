@@ -26,7 +26,7 @@ public class SignupActivity extends AppCompatActivity {
     private Button signup_bt;
 
 
-    public void bindviews() {
+    public void bindViews() {
         email_et = findViewById(R.id.email_edittext);
         password_et = findViewById(R.id.password_edittext);
         confirm_et = findViewById(R.id.confirm_edittext);
@@ -66,11 +66,11 @@ public class SignupActivity extends AppCompatActivity {
         }
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            email_et.setError("");
+            email_et.setError("Email ID is Empty");
             focusView = email_et;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            email_et.setError("");
+            email_et.setError("Enter a valid Email ID");
             focusView = email_et;
             cancel = true;
         }
@@ -104,10 +104,10 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d("Serveasy", "Create User With Email is Successful");
-                            Log.d("Serveasy", "Email:" + email + " Password: " + password);
+                            Log.d("serveasy", "Create User With Email is Successful");
+                            Log.d("serveasy", "Email:" + email + " Password: " + password);
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Log.d("Serveasy", "User is" + user);
+                            Log.d("serveasy", "User is" + user);
 
                             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                             finish();
@@ -137,34 +137,11 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-
-    //Sign In Method For Existing User
-    /*public void signIn() {
-
-        email = email_et.getText().toString();
-        password = password_et.getText().toString();
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if (task.isSuccessful()) {
-                    Log.d("serveasy", "Sign in Successful");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    Log.d("serveasy", "USER IS: " + user);
-                } else {
-                    Log.d("serveasy", "Failure in Sign In" + task.getException());
-                    Toast.makeText(SignupActivity.this, "Cant Log In", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        bindviews();
+        bindViews();
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
