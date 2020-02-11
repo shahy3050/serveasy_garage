@@ -1,21 +1,20 @@
 package com.example.serveasy_garage;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email_et, password_et;
     private TextView signupTV;
     private Button login_bt;
+    private TextInputLayout inputLayoutEmail, inputLayoutPassword;
 
 
     public void bindViews() {
@@ -34,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         password_et = findViewById(R.id.password_edit_text);
         login_bt = findViewById(R.id.login_button);
         signupTV = findViewById(R.id.register_text_view);
+        inputLayoutEmail = findViewById(R.id.email_input_layout);
+        inputLayoutPassword = findViewById(R.id.password_input_layout);
+
     }
 
     @Override
@@ -46,43 +49,32 @@ public class LoginActivity extends AppCompatActivity {
 
     // attempt login when clicked on login button
     public void attemptLogin() {
-        email_et.setError(null);
-        password_et.setError(null);
+        boolean isValid = true;
+        if (email_et.getText().toString().isEmpty()) {
+            inputLayoutEmail.setError("Email Address is Empty");
+            isValid = false;
+        } else if (!email_et.getText().toString().contains("@")) {
+            inputLayoutEmail.setError("@ symbol missing ");
 
-        String email = email_et.getText().toString();
-        String password = password_et.getText().toString();
 
-        boolean cancel = false;
-        View focusView = null;
-
-        // Check for a empty password.
-        if (TextUtils.isEmpty(password)) {
-            password_et.setError("Password is Empty!!! ");
-            focusView = password_et;
-            cancel = true;
-        }
-        // Check for a valid email address.
-        if (TextUtils.isEmpty(email)) {
-            email_et.setError("Email ID is Empty");
-            focusView = email_et;
-            cancel = true;
-        } else if (!isEmailValid(email)) {
-            email_et.setError("Enter a valid Email ID");
-            focusView = email_et;
-            cancel = true;
-        }
-        if (cancel) {
-            // There was an error; don't attempt login and focus the first
-            // form field with an error.
-            focusView.requestFocus();
         } else {
-            logIn();
+            inputLayoutEmail.setErrorEnabled(false);
         }
-    }
+        if (password_et.getText().toString().isEmpty()) {
+            inputLayoutPassword.setError("Password is Empty");
+            isValid = false;
+        } else if (password_et.getText().toString().trim().length() < 8) {
+            inputLayoutPassword.setError("Password should have more than 8 characters");
 
-    private boolean isEmailValid(String email) {
-        // You can add more checking logic here.
-        return email.contains("@");
+        } else if (isValid) {
+
+//            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+            inputLayoutPassword.setErrorEnabled(false);
+            logIn();
+
+        }
+
+
     }
 
 
@@ -106,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Log.d("serveasy", "Failure in Sign In" + task.getException());
 
-                    showErrorDialog("Failure Loggin In, Please Try again");
+                    showErrorDialog("Failure Logging In, Please Try again");
 
                 }
 
