@@ -5,4 +5,8 @@
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <color name="error_color">#B10D00</color>
+    <color name="colorControlActivated">#299ADA</color>
+    <color name="colorControlNormal">#A5B0B3</color>
 </resources>

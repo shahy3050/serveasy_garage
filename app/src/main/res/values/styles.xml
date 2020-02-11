@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorControlActivated</item>
+        <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="colorError">@color/error_color</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -17,11 +20,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="error_appearance" parent="android:TextAppearance">
-        <item name="android:textColor">@color/error_color</item>
 
+    <color name="error_color">#B10D00</color>
+    <color name="colorControlActivated">#299ADA</color>
+    <color name="colorControlNormal">#A5B0B3</color>
 
-    </style>
-
-    <color name="error_color">#FF0000</color>
 </resources>
