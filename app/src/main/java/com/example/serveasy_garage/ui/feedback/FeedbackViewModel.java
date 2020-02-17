@@ -1,16 +1,16 @@
-package com.example.serveasy_garage.ui.gallery;
+package com.example.serveasy_garage.ui.feedback;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class FeedbackViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public FeedbackViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is Feedback fragment");
     }
 
     public LiveData<String> getText() {
