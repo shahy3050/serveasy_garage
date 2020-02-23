@@ -14,8 +14,7 @@
         <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/NoActionBar"></activity>
-
+            android:theme="@style/NoActionBar" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

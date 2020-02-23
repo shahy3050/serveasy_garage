@@ -45,7 +45,7 @@ public class DrawerActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_dashboard, R.id.nav_feedback, R.id.nav_services,
-                R.id.nav_pending, R.id.nav_share, R.id.nav_send)
+                R.id.nav_pending, R.id.nav_bike, R.id.nav_vehicle)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

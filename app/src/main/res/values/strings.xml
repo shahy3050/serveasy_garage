@@ -29,5 +29,29 @@
     <string name="title_activity_drawer">DrawerActivity</string>
 
 
+    <string-array name="car_service_array">
+        <item>Oil Change</item>
+        <item>Air Filter Replacement</item>
+        <item>New Tyre</item>
+        <item>Battery Replacement</item>
+        <item>Brake Servicing</item>
+        <item>Engine Tune-Up</item>
+        <item>Wheel Alignment</item>
+        <item>Car Wash</item>
+    </string-array>
+
+
+    <string-array name="bike_service_array">
+        <item>Oil Change</item>
+        <item>Clutch Wire Replacement</item>
+        <item>New Tyre</item>
+        <item>Battery Replacement</item>
+        <item>Engine Tune-Up</item>
+        <item>Wheel Alignment</item>
+        <item>Shock-Up Repair</item>
+        <item>Bike Wash</item>
+    </string-array>
+
+
 </resources>
 
