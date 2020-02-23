@@ -111,7 +111,7 @@ public class SignupActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Log.d("serveasy", "User is" + user);
 
-                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            Intent intent = new Intent(SignupActivity.this, AddInfoActivity.class);
                             finish();
                             startActivity(intent);
 
@@ -156,7 +156,7 @@ public class SignupActivity extends AppCompatActivity {
         loginTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignupActivity.this, DrawerActivity.class);
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.example.serveasy_garage.ui.bike;
+package com.example.serveasy_garage.ui.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,15 +11,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.serveasy_garage.R;
 
-public class BikeFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private BikeViewModel bikeViewModel;
+    private ProfileViewModel profileViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        bikeViewModel =
-                ViewModelProviders.of(this).get(BikeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_bike, container, false);
+        profileViewModel =
+                ViewModelProviders.of(this).get(ProfileViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
         return root;
     }

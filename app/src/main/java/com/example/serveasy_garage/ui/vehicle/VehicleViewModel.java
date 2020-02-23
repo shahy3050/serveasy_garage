@@ -10,7 +10,7 @@ public class VehicleViewModel extends ViewModel {
 
     public VehicleViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Car fragment");
+        mText.setValue("This is Vehicle fragment");
     }
 
     public LiveData<String> getText() {

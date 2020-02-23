@@ -31,14 +31,23 @@
         tools:layout="@layout/fragment_feedback" />
 
     <fragment
-        android:id="@+id/nav_bike"
-        android:name="com.example.serveasy_garage.ui.bike.BikeFragment"
+        android:id="@+id/nav_profile"
+        android:name="com.example.serveasy_garage.ui.profile.ProfileFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_bike" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_vehicle"
         android:name="com.example.serveasy_garage.ui.vehicle.VehicleFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_vehicle" />
+    <!-- <fragment
+         android:id="@+id/nav_logout"
+         android:label="Logout"
+         tools:layout="@layout/activity_login" />-->
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.serveasy_garage.LoginActivity"
+        android:label="Logout"
+        tools:layout="@layout/activity_login" />
 </navigation>

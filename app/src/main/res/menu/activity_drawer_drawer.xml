@@ -23,9 +23,19 @@
             android:icon="@drawable/ic_feedback"
             android:title="Feedback" />
 
+
     </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_man"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
 
 
-
+    </group>
 
 </menu>

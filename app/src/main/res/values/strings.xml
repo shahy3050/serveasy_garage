@@ -27,9 +27,12 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="save_procees"><![CDATA[Save & Procees]]></string>
+    <string name="proceed">Proceed</string>
 
 
     <string-array name="car_service_array">
+        <item>Service</item>
         <item>Oil Change</item>
         <item>Air Filter Replacement</item>
         <item>New Tyre</item>
