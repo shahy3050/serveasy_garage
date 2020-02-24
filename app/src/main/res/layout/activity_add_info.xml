@@ -1,0 +1,162 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:http="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainscreen"
+    android:fitsSystemWindows="true">
+
+    <!--      <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="15dp"
+              android:layout_marginRight="15dp"
+              android:layout_marginBottom="15dp"
+
+              android:orientation="vertical">
+
+              <RelativeLayout
+                  android:id="@+id/background"
+                  android:layout_width="match_parent"
+                  android:layout_height="200dp"
+                  android:background="@drawable/profile_back">
+
+                  <ImageView
+                      android:id="@+id/btnEdit"
+                      android:layout_width="30dp"
+                      android:layout_height="30dp"
+                      android:layout_alignParentEnd="true"
+                      android:layout_alignParentRight="true"
+                      android:layout_margin="25dp"
+                      android:src="@drawable/ic_menu_manage" />
+              </RelativeLayout>
+
+              <LinearLayout
+                  android:id="@+id/liner_profileimage"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="20dp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginTop="-100dp"
+                  android:orientation="horizontal">
+
+                  &lt;!&ndash;<de.hdodenhof.circleimageview.CircleImageView
+                      android:id="@+id/imgProfile"
+                      civ_border_color="@color/semiTransparentWhite"
+                      civ_border_width="10dp"
+                      android:layout_width="150dp"
+                      android:layout_height="150dp"
+                      android:src= />&ndash;&gt;
+                  <ImageView
+                      android:layout_width="150dp"
+                      android:layout_height="150dp"
+                      android:src="@mipmap/ic_launcher_round" />
+
+
+              </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/garage_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:errorTextColor="#FF0000">
+
+            <EditText
+                android:id="@+id/garage_name_et"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Garage Name"
+                android:inputType="textEmailAddress"
+                android:padding="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/garage_city_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:errorTextColor="#FF0000">
+
+            <EditText
+                android:id="@+id/g_city_edit_text"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:inputType="textEmailAddress"
+                android:padding="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/garage_area_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:errorTextColor="#FF0000">
+
+            <EditText
+                android:id="@+id/garage_area_et"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Area"
+                android:inputType="textEmailAddress"
+                android:padding="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/garage_contact_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            app:errorTextColor="#FF0000">
+
+            <EditText
+                android:id="@+id/garage_contact_et"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:inputType="textEmailAddress"
+                android:padding="15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/button_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorAccent"
+            android:text="@string/proceed"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</ScrollView>

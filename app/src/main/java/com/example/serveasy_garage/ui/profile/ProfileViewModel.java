@@ -1,14 +1,14 @@
-package com.example.serveasy_garage.ui.share;
+package com.example.serveasy_garage.ui.profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class ProfileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public ProfileViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is share fragment");
     }

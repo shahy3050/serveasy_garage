@@ -111,7 +111,7 @@ public class SignupActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             Log.d("serveasy", "User is" + user);
 
-                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            Intent intent = new Intent(SignupActivity.this, AddInfoActivity.class);
                             finish();
                             startActivity(intent);
 

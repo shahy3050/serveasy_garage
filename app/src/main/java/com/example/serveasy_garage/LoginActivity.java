@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -90,8 +91,8 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("serveasy", "Sign in Successful");
                     FirebaseUser user = mAuth.getCurrentUser();
                     Log.d("serveasy", "USER IS: " + user);
-
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(LoginActivity.this, DrawerActivity.class);
                     finish();
                     startActivity(intent);
 
@@ -135,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
         signupTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, DrawerActivity.class);
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
             }
         });
